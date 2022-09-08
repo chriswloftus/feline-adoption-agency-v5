@@ -55,10 +55,10 @@ fun CatsScreen(
             val breedList = stringArrayResource(id = R.array.breed_array).toList()
             val genderList = stringArrayResource(id = R.array.gender_array).toList()
             val ageList = stringArrayResource(id = R.array.age_range_array).toList()
-            var selectedBreed by remember { mutableStateOf(breedList[0]) }
-            var selectedGender by remember { mutableStateOf(genderList[0]) }
-            var selectedAge by remember { mutableStateOf(ageList[0]) }
-            var proximity by remember { mutableStateOf(10) }
+            var selectedBreed by rememberSaveable { mutableStateOf(breedList[0]) }
+            var selectedGender by rememberSaveable { mutableStateOf(genderList[0]) }
+            var selectedAge by rememberSaveable { mutableStateOf(ageList[0]) }
+            var proximity by rememberSaveable { mutableStateOf(10) }
 
             var dialogIsOpen by rememberSaveable { mutableStateOf(false) }
 
