@@ -7,8 +7,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Map
 import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.stringArrayResource
@@ -16,7 +19,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import uk.ac.aber.dcs.cs31620.faa.R
@@ -46,12 +48,11 @@ fun CatsScreen(
     )
     { innerPadding ->
 
-        ConstraintLayout(
+        Column(
             modifier = Modifier
                 .padding(innerPadding)
                 .fillMaxSize()
         ) {
-            val (cardSpinner, listSpinner) = createRefs()
             val breedList = stringArrayResource(id = R.array.breed_array).toList()
             val genderList = stringArrayResource(id = R.array.gender_array).toList()
             val ageList = stringArrayResource(id = R.array.age_range_array).toList()
@@ -64,13 +65,7 @@ fun CatsScreen(
 
             Card(
                 shape = RectangleShape,
-                elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
-                modifier = Modifier
-                    .constrainAs(cardSpinner) {
-                        start.linkTo(parent.start)
-                        top.linkTo(parent.top)
-                        end.linkTo(parent.end)
-                    }
+                elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
             ) {
                 Row {
                     ButtonSpinner(
