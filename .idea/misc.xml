@@ -49,11 +49,16 @@
         <entry key="../../../../../../../../layout/compose-model-1661940327616.xml" value="0.2689393939393939" />
         <entry key="../../../../../../../../layout/compose-model-1661948309339.xml" value="0.18646934460887948" />
         <entry key="../../../../../../../../layout/compose-model-1662625696421.xml" value="0.18644781144781145" />
+        <entry key="../../../../../../../../layout/compose-model-1663084311402.xml" value="0.30462962962962964" />
+        <entry key="../../../../../../../../layout/compose-model-1663137548097.xml" value="0.1" />
+        <entry key="../../../../../../../../layout/compose-model-1664352079755.xml" value="0.1" />
+        <entry key="../../../../../../../../layout/compose-model-1664352361133.xml" value="0.30934343434343436" />
+        <entry key="../../../../../../../../layout/compose-model-1664353134574.xml" value="0.335" />
         <entry key="app/src/main/res/drawable-v24/ic_cat.xml" value="0.17" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="corretto-11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

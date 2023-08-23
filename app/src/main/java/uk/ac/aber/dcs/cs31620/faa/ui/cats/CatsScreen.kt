@@ -9,6 +9,8 @@ import androidx.compose.material.icons.filled.Map
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
@@ -38,7 +40,6 @@ import uk.ac.aber.dcs.cs31620.faa.ui.theme.FAATheme
  * in a later workshop.
  * @author Chris Loftus
  */
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CatsScreen(
     navController: NavHostController
@@ -59,7 +60,7 @@ fun CatsScreen(
             var selectedBreed by rememberSaveable { mutableStateOf(breedList[0]) }
             var selectedGender by rememberSaveable { mutableStateOf(genderList[0]) }
             var selectedAge by rememberSaveable { mutableStateOf(ageList[0]) }
-            var proximity by rememberSaveable { mutableStateOf(10) }
+            var proximity by rememberSaveable { mutableIntStateOf(10) }
 
             var dialogIsOpen by rememberSaveable { mutableStateOf(false) }
 
@@ -132,7 +133,7 @@ private fun DistanceDialog(
     changeDistance: (Int) -> Unit = {}
 ) {
 
-    var sliderPosition by rememberSaveable { mutableStateOf(distance.toFloat()) }
+    var sliderPosition by rememberSaveable { mutableFloatStateOf(distance.toFloat()) }
 
     if (dialogIsOpen) {
         AlertDialog(
